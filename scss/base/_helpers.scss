@@ -1,0 +1,37 @@
+@use './variables' as v;
+@use './mixins' as m;
+
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin-inline: auto;
+}
+@media (min-width: v.$tablet) {
+    .sticky {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+}
+
+.bg-primario {
+    background-color: v.$clr-primario;
+
+    li:nth-child(odd) {
+        background-color: darken($color: v.$clr-primario, $amount: 10%);
+    }
+}
+.bg-secundario {
+    background-color: v.$clr-secundario;
+
+    li:nth-child(odd) {
+        background-color: darken($color: v.$clr-secundario, $amount: 10%);
+    }
+}
+.bg-resaltado {
+    background-color: v.$clr-resaltado;
+    
+    li:nth-child(odd) {
+        background-color: darken($color: v.$clr-resaltado, $amount: 10%);
+    }
+}

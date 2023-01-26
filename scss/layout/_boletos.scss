@@ -1,0 +1,52 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.boletos {
+    padding-block: 5rem;
+    background-color: v.$clr-primario;
+
+    h3 {
+        text-align: center;
+        font-size: 2rem;
+        color: v.$clr-claro;
+    }
+    p {
+        text-align: center;
+    }
+}
+
+.contenedor-boletos {
+    @include m.grid(auto-fit, minmax(30rem, 1fr), 2rem);
+    color: v.$clr-claro;
+
+    .pase {
+        margin-top: 1rem;
+
+        .pase-header {
+            
+            padding: 1rem;
+            text-transform: uppercase;
+            font-weight: lighter;
+            
+            color: v.$clr-claro;
+            background-color: v.$clr-secundario;
+        }
+
+        .pase-body {
+            color: v.$clr-oscuro;
+            background-color: v.$clr-claro;
+
+            li {
+                padding: 1rem;
+                border-bottom: 1px solid #e4e4e4;
+            }
+        }
+
+        .pase-footer {
+            padding: 1rem;
+            font-size: 2.4rem;
+            background-color: v.$clr-acento;
+        }
+    }
+
+}

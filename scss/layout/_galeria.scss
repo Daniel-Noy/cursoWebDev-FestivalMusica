@@ -1,0 +1,46 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.galeria {
+    text-align: center;
+
+    .galeria-imagenes{
+        @include m.grid(auto-fit, minmax(17rem, 1fr), 1rem);
+        
+        margin-block: 2rem;
+    }
+}
+
+.overlay-imagen {
+    position: fixed;
+    top: 0;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0 0 0 / .7);
+
+    picture {
+        max-width: min(80rem, 95%);
+    }
+
+    .boton-modal {
+        padding: 1rem 1.7rem;
+        
+        font-size: 3.5rem;
+        font-weight: 900;
+
+        border-radius: 50%;
+        color: v.$clr-oscuro;
+        background-color: v.$clr-claro;
+        cursor: pointer;
+
+        transition: all .4s ease;
+
+        &:hover {
+            background-color: darken($color: v.$clr-claro, $amount: 30%);
+            transform: rotate(180deg);
+        }
+    }
+}
